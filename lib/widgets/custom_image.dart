@@ -36,7 +36,7 @@ class CustomImage extends StatelessWidget {
             color: shadowColor.withOpacity(0.1),
             spreadRadius: 1,
             blurRadius: 1,
-            offset: Offset(1, 2), // changes position of shadow
+            offset: const Offset(1, 2), // changes position of shadow
           ),
         ],
         image: DecorationImage(image: NetworkImage(name), fit: BoxFit.cover),

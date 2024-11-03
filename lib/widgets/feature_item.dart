@@ -15,7 +15,7 @@ class FeaturedItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.only(bottom: 10),
+        margin: const EdgeInsets.only(bottom: 10),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -25,7 +25,7 @@ class FeaturedItem extends StatelessWidget {
               color: shadowColor.withOpacity(0.1),
               spreadRadius: 1,
               blurRadius: 1,
-              offset: Offset(0, 1), // changes position of shadow
+              offset: const Offset(0, 1), // changes position of shadow
             ),
           ],
         ),
@@ -38,7 +38,7 @@ class FeaturedItem extends StatelessWidget {
               height: 60,
               radius: 10,
             ),
-            SizedBox(width: 15),
+            const SizedBox(width: 15),
             Expanded(
               child: _buildItemInfo(),
             ),
@@ -56,10 +56,10 @@ class FeaturedItem extends StatelessWidget {
           data["price"],
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 14, fontWeight: FontWeight.w500, color: primary),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         FavoriteBox(
@@ -78,33 +78,33 @@ class FeaturedItem extends StatelessWidget {
           data["name"],
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
         ),
-        SizedBox(
+        const SizedBox(
           height: 3,
         ),
         Text(
           data["sources"],
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(fontSize: 12, color: Colors.grey),
+          style: const TextStyle(fontSize: 12, color: Colors.grey),
         ),
-        SizedBox(
+        const SizedBox(
           height: 4,
         ),
         Row(
           children: [
-            Icon(
+            const Icon(
               Icons.star_rounded,
               size: 14,
               color: primary,
             ),
-            SizedBox(
+            const SizedBox(
               width: 2,
             ),
             Text(
               data["rate"] + " (" + data["rate_number"] + ")",
-              style: TextStyle(fontSize: 12, color: primary),
+              style: const TextStyle(fontSize: 12, color: primary),
             ),
           ],
         )

@@ -19,7 +19,7 @@ class CustomTextBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.only(bottom: 3),
+      padding: const EdgeInsets.only(bottom: 3),
       height: 44,
       decoration: BoxDecoration(
         color: textBoxColor,
@@ -33,7 +33,7 @@ class CustomTextBox extends StatelessWidget {
           suffixIcon: suffix,
           border: InputBorder.none,
           hintText: hint,
-          hintStyle: TextStyle(color: darker, fontSize: 15),
+          hintStyle: const TextStyle(color: darker, fontSize: 15),
         ),
       ),
     );

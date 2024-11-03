@@ -9,7 +9,7 @@ import 'package:foodtrack/widgets/notification_box.dart';
 import 'package:foodtrack/widgets/popular_item.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -36,13 +36,13 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Container(
               alignment: Alignment.centerLeft,
-              child: Icon(
+              child: const Icon(
                 Icons.clear_all_rounded,
                 size: 28,
               ),
             ),
           ),
-          NotificationBox(
+          const NotificationBox(
             number: 1,
           )
         ],
@@ -55,17 +55,17 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 15, right: 15),
             child: Text(
-              "Hello Sangvaleap!",
+              "Hello Kartik!",
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
           ),
           const SizedBox(
             height: 10,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 15, right: 15),
             child: Text(
               "Find Your Meals",
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 20,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 15, right: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 20,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 15, right: 15),
             child: Text(
               "Featured",
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
             height: 10,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
+            padding: const EdgeInsets.only(left: 15, right: 15),
             child: _buildFeatured(),
           ),
           const SizedBox(
@@ -133,7 +133,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   _buildSearch() {
-    return Padding(
+    return const Padding(
       padding: EdgeInsets.only(left: 15, right: 15),
       child: CustomTextBox(
         hint: "Search",
@@ -148,12 +148,12 @@ class _HomePageState extends State<HomePage> {
 
   _buildAdsImage() {
     return Container(
-      margin: EdgeInsets.only(left: 15, right: 15),
+      margin: const EdgeInsets.only(left: 15, right: 15),
       height: 150,
       decoration: BoxDecoration(
         color: Colors.grey,
         borderRadius: BorderRadius.circular(15),
-        image: DecorationImage(
+        image: const DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(
             "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2ZpbGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
@@ -166,10 +166,10 @@ class _HomePageState extends State<HomePage> {
   _buildCategories() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(bottom: 5, left: 15),
+      padding: const EdgeInsets.only(bottom: 5, left: 15),
       child: Row(
         children: [
-          CategoryItem(
+          const CategoryItem(
             data: {
               "name": "All",
               "icon": FontAwesomeIcons.th,
@@ -188,7 +188,7 @@ class _HomePageState extends State<HomePage> {
   _buildPopulars() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(left: 15),
+      padding: const EdgeInsets.only(left: 15),
       child: Row(
         children: List.generate(
           populars.length,

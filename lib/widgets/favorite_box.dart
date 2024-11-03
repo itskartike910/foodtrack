@@ -21,7 +21,7 @@ class FavoriteBox extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(padding),
-        decoration: BoxDecoration(color: primary, shape: BoxShape.circle),
+        decoration: const BoxDecoration(color: primary, shape: BoxShape.circle),
         child: Icon(
           isFavorited ? Icons.favorite_rounded : Icons.favorite_outline_rounded,
           size: iconSize,

@@ -13,18 +13,18 @@ class RootApp extends StatefulWidget {
 class _RootAppState extends State<RootApp> {
   int _activeTab = 0;
 
-  List<IconData> _tapIcons = [
+  final List<IconData> _tapIcons = [
     Icons.home_rounded,
     Icons.explore_rounded,
     Icons.shopping_cart_rounded,
     Icons.person_rounded
   ];
 
-  List<Widget> _pages = [
-    HomePage(),
-    HomePage(),
-    HomePage(),
-    HomePage(),
+  final List<Widget> _pages = [
+    const HomePage(),
+    const HomePage(),
+    const HomePage(),
+    const HomePage(),
   ];
 
   @override
@@ -40,10 +40,10 @@ class _RootAppState extends State<RootApp> {
     return Container(
       height: 75,
       width: double.infinity,
-      padding: EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         color: bottomBarColor,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(25),
           topRight: Radius.circular(25),
         ),
@@ -52,7 +52,7 @@ class _RootAppState extends State<RootApp> {
             color: shadowColor.withOpacity(0.1),
             blurRadius: .5,
             spreadRadius: .5,
-            offset: Offset(0, 1),
+            offset: const Offset(0, 1),
           )
         ],
       ),

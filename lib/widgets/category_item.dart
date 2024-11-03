@@ -18,8 +18,8 @@ class CategoryItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(right: 10),
         width: 90,
         decoration: BoxDecoration(
           color: seleted ? primary : cardColor,
@@ -29,7 +29,7 @@ class CategoryItem extends StatelessWidget {
               color: shadowColor.withOpacity(0.05),
               spreadRadius: .5,
               blurRadius: .5,
-              offset: Offset(0, 1), // changes position of shadow
+              offset: const Offset(0, 1), // changes position of shadow
             ),
           ],
         ),
@@ -41,7 +41,7 @@ class CategoryItem extends StatelessWidget {
               size: 17,
               color: seleted ? Colors.white : darker,
             ),
-            SizedBox(width: 7),
+            const SizedBox(width: 7),
             Text(
               data["name"],
               maxLines: 1,
