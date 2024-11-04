@@ -3,12 +3,12 @@ import 'package:foodtrack/theme/color.dart';
 
 class CustomTextBox extends StatelessWidget {
   const CustomTextBox({
-    Key? key,
+    super.key,
     this.hint = "",
     this.prefix,
     this.suffix,
     this.controller,
-  }) : super(key: key);
+  });
 
   final String hint;
   final Widget? prefix;

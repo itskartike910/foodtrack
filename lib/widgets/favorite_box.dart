@@ -3,12 +3,11 @@ import 'package:foodtrack/theme/color.dart';
 
 class FavoriteBox extends StatelessWidget {
   const FavoriteBox(
-      {Key? key,
+      {super.key,
       this.padding = 5,
       this.iconSize = 18,
       this.isFavorited = false,
-      this.onTap})
-      : super(key: key);
+      this.onTap});
 
   final double padding;
   final double iconSize;

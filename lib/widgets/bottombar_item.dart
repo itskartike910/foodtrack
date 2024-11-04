@@ -3,7 +3,7 @@ import 'package:foodtrack/theme/color.dart';
 
 class BottomBarItem extends StatelessWidget {
   const BottomBarItem(
-    this.icon, {
+    this.icon, {super.key, 
     this.onTap,
     this.color = inActiveColor,
     this.activeColor = primary,

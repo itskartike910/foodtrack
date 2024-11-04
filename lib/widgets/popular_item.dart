@@ -4,13 +4,13 @@ import 'package:foodtrack/theme/color.dart';
 import 'favorite_box.dart';
 
 class PopularItem extends StatelessWidget {
-  PopularItem({Key? key, required this.data}) : super(key: key);
+  const PopularItem({super.key, required this.data});
   final data;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 15),
+      margin: const EdgeInsets.only(right: 15),
       height: 170,
       width: 220,
       child: Stack(
@@ -60,18 +60,18 @@ class PopularItem extends StatelessWidget {
               Expanded(
                 child: Text(
                   data["name"],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text(
                 data["price"],
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   color: primary,
                   fontWeight: FontWeight.w600,

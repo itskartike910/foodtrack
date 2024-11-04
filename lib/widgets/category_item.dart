@@ -3,11 +3,11 @@ import 'package:foodtrack/theme/color.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({
-    Key? key,
+    super.key,
     required this.data,
     this.seleted = false,
     this.onTap,
-  }) : super(key: key);
+  });
 
   final data;
   final bool seleted;

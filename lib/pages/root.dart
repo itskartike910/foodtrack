@@ -4,7 +4,7 @@ import 'package:foodtrack/widgets/bottombar_item.dart';
 import 'home.dart';
 
 class RootApp extends StatefulWidget {
-  const RootApp({Key? key}) : super(key: key);
+  const RootApp({super.key});
 
   @override
   _RootAppState createState() => _RootAppState();
