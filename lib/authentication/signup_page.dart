@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:foodtrack/firebase_options.dart';
 import 'package:foodtrack/helper/ui_helper.dart';
+import 'package:foodtrack/helper/widgets/consts.dart';
 import 'package:foodtrack/helper/widgets/form_button.dart';
 import 'package:foodtrack/helper/widgets/form_container.dart';
 import 'package:foodtrack/models/user_model.dart';
@@ -62,25 +63,22 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Complete Profile',
+          'FoodTrack',
           style: GoogleFonts.playfairDisplay(
             fontSize: 30,
             fontWeight: FontWeight.bold,
+            color: titleColor, // Update to match LoginPage
           ),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: appBarColor, // Consistent app bar color
         centerTitle: true,
+        shadowColor: appBarShadowColor,
+        elevation: 5,
       ),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(20),
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.blue, Colors.purple],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
+          color: backgroundScreenColor, // Consistent background color
           child: ListView(
             children: [
               const SizedBox(height: 10),
@@ -139,7 +137,7 @@ class _SignUpPageState extends State<SignUpPage> {
               FormButtonWidget(
                 text: 'Sign Up',
                 backgroundColor: Colors.purpleAccent,
-                textColor: Colors.black,
+                textColor: txtColor, // Consistent text color
                 onPressed: checkValues,
               ),
             ],
@@ -208,12 +206,18 @@ class _SignUpPageState extends State<SignUpPage> {
     String password = passwordController.text.trim();
     String confirmPassword = confirmPasswordController.text.trim();
 
-    if (fname.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
-      UIHelper.toast("Please fill all the fields!", Toast.LENGTH_SHORT, ToastGravity.BOTTOM);
+    if (fname.isEmpty ||
+        email.isEmpty ||
+        password.isEmpty ||
+        confirmPassword.isEmpty) {
+      UIHelper.toast("Please fill all the fields!", Toast.LENGTH_SHORT,
+          ToastGravity.BOTTOM);
     } else if (password != confirmPassword) {
-      UIHelper.toast("Passwords do not match!", Toast.LENGTH_SHORT, ToastGravity.BOTTOM);
+      UIHelper.toast(
+          "Passwords do not match!", Toast.LENGTH_SHORT, ToastGravity.BOTTOM);
     } else if (imageFile == null) {
-      UIHelper.toast("Please insert your image!", Toast.LENGTH_SHORT, ToastGravity.BOTTOM);
+      UIHelper.toast(
+          "Please insert your image!", Toast.LENGTH_SHORT, ToastGravity.BOTTOM);
     } else {
       signUp(email, password);
     }
@@ -228,7 +232,8 @@ class _SignUpPageState extends State<SignUpPage> {
       uploadData(userCredential.user!);
     } catch (e) {
       Navigator.pop(context);
-      UIHelper.toast("Error creating account: $e", Toast.LENGTH_LONG, ToastGravity.BOTTOM);
+      UIHelper.toast(
+          "Error creating account: $e", Toast.LENGTH_LONG, ToastGravity.BOTTOM);
     }
   }
 
@@ -255,23 +260,15 @@ class _SignUpPageState extends State<SignUpPage> {
           .doc(firebaseUser.uid)
           .set(userModel.toMap())
           .then((value) {
-        UIHelper.toast("Data Uploaded...", Toast.LENGTH_LONG, ToastGravity.BOTTOM);
+        UIHelper.toast(
+            "Data Uploaded...", Toast.LENGTH_LONG, ToastGravity.BOTTOM);
         Navigator.popUntil(context, (route) => route.isFirst);
-        // Navigator.pushReplacement(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => HomePage(
-        //       userModel: userModel,
-        //       firebaseUser: firebaseUser,
-        //     ),
-        //   ),
-        // );
+        // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage(userModel: userModel, firebaseUser: firebaseUser)));
       });
     } catch (e) {
       Navigator.pop(context);
-      UIHelper.toast("Error uploading data: $e", Toast.LENGTH_LONG, ToastGravity.BOTTOM);
+      UIHelper.toast(
+          "Error uploading data: $e", Toast.LENGTH_LONG, ToastGravity.BOTTOM);
     }
   }
 }
-
-// UI Helper, FormContainerWidget, FormButtonWidget, HomePage remain the same as in your code.

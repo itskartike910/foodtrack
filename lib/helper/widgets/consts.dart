@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
-
 const bgColor = Color.fromARGB(255, 136, 255, 239);
 const blueColor = Color.fromRGBO(0, 149, 246, 1);
 
 const primaryColor = Colors.white;
 const secondaryColor = Colors.grey;
 const tertiaryColor = Color.fromRGBO(97, 97, 97, 1);
-
-var messageFontSize = 16.0;
-
-Color senderColor = Colors.green;
-Color receiverColor = Colors.blue;
 
 Color backgroundScreenColor = const Color.fromARGB(255, 195, 250, 245);
 Color appBarColor = const Color.fromARGB(255, 135, 255, 240);

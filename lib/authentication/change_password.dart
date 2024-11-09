@@ -29,7 +29,7 @@ class _ChangePassState extends State<ChangePass> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'ChatBox',
+          'FoodTrack',
           style: GoogleFonts.playfairDisplay(
             fontSize: 30,
             fontWeight: FontWeight.bold,

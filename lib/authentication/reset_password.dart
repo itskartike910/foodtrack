@@ -46,7 +46,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'ChatBox',
+          'FoodTrack',
           style: GoogleFonts.playfairDisplay(
             fontSize: 30,
             fontWeight: FontWeight.bold,
